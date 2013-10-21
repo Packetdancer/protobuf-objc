@@ -251,7 +251,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 
     for (int i = 0; i < descriptor_->field_count(); i++) {
       string s = "#define ";
-      s = s + this->descriptor_->name() + "_" + descriptor_->field(i)->name() + " @\"" + descriptor_->field(i)->name() + "\"\n";
+      s = s + this->descriptor_->name() + "_" + descriptor_->field(i)->name() + " @\"" + UnderscoresToCamelCase(descriptor_->field(i)) + "\"\n";
       printer->Print(s.c_str());
     }
 

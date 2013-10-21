@@ -83,6 +83,11 @@
   @throw [NSException exceptionWithName:@"ImproperSubclassing" reason:@"" userInfo:nil];
 }
 
+- (void) writeDescriptionTo:(NSMutableString *)output withIndent:(NSString *)indent
+{
+    @throw [NSException exceptionWithName:@"ImproperSubclassing" reason:@"" userInfo:nil];    
+}
+
 - (NSDictionary *) dictionaryRepresentation {
     @throw [NSException exceptionWithName:@"ImproperSubclassing" reason:@"" userInfo:nil];
 }
