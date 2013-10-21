@@ -1,6 +1,10 @@
 # Protocol Buffers, Objective C iOS5
 
-This is a modified ARC enabled version of the [Protocol Buffers in Objective C][protobuf-objc] project. It is optimized for iOS5 and up. This version is updated for Protobuf 2.5.
+This is a modified ARC enabled version of the [Protocol Buffers in Objective C][protobuf-objc] project. 
+It is optimized for iOS5 and up. This version is updated for Protobuf 2.5.  It also contains several
+new convenience functions on the generated classes.  Most notably:
+
+- `storeToDictionary:(NSMutableDictionary *)dict` will store all fields that are present into a standard Cocoa dictionary.
 
 Protocol Buffers are a way of encoding structured data in an efficient yet extensible format.
 This project is based on an implementation of Protocol Buffers from Google.  See the
@@ -11,6 +15,13 @@ This project is based on an implementation of Protocol Buffers from Google.  See
 
 # Credits
 
+Synapse Product Development
+-------------------------------------------------------------------------------
+- Rachel Blackman
+- Nate True
+
+davidby
+-------------------------------------------------------------------------------
 - David Bonnefoy
 
 Regwez Inc.
