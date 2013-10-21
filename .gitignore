@@ -36,3 +36,9 @@ Build/
 project.xcworkspace
 xcuserdata
 .idea
+
+#Eclipse stuff
+.cproject
+.project
+.settings/language.settings.xml
+compile
