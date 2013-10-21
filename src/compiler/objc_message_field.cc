@@ -235,6 +235,14 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "}\n");
   }
 
+  void MessageFieldGenerator::GenerateDictionaryCodeSource(io::Printer* printer) const {
+    printer->Print(variables_,
+      "if (self.has$capitalized_name$) {\n"
+      "  NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary];\n"
+      "  [self.$name$ storeInDictionary:messageDictionary];\n"
+      "  [dictionary setObject:[NSDictionary dictionaryWithDictionary:messageDictionary] forKey:@\"$name$\"];\n"
+      "}\n");
+  }
 
   void MessageFieldGenerator::GenerateIsEqualCodeSource(io::Printer* printer) const {
     printer->Print(variables_,
@@ -472,6 +480,15 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "  [element writeDescriptionTo:output\n"
       "                   withIndent:[NSString stringWithFormat:@\"%@  \", indent]];\n"
       "  [output appendFormat:@\"%@}\\n\", indent];\n"
+      "}\n");
+  }
+  
+  void RepeatedMessageFieldGenerator::GenerateDictionaryCodeSource(io::Printer* printer) const {
+    printer->Print(variables_,
+      "for ($type$* element in self.$list_name$) {\n"
+      "  NSMutableDictionary *elementDictionary = [NSMutableDictionary dictionary];\n"
+      "  [element storeInDictionary:elementDictionary];\n"
+      "  [dictionary setObject:[NSDictionary dictionaryWithDictionary:elementDictionary]];\n"
       "}\n");
   }
 

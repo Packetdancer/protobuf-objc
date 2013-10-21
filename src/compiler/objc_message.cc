@@ -396,6 +396,8 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "classname", ClassName(descriptor_));
 
     GenerateMessageDescriptionSource(printer);
+    
+    GenerateMessageDictionarySource(printer);
 
     GenerateMessageIsEqualSource(printer);
 
@@ -636,6 +638,42 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 
     printer->Print(
       "[self.unknownFields writeDescriptionTo:output withIndent:indent];\n");
+
+    printer->Outdent();
+    printer->Print(
+      "}\n");
+  }
+  
+  void MessageGenerator::GenerateMessageDictionarySource(io::Printer* printer) {
+    scoped_array<const FieldDescriptor*> sorted_fields(SortFieldsByNumber(descriptor_));
+
+    vector<const Descriptor::ExtensionRange*> sorted_extensions;
+    for (int i = 0; i < descriptor_->extension_range_count(); ++i) {
+      sorted_extensions.push_back(descriptor_->extension_range(i));
+    }
+    sort(sorted_extensions.begin(), sorted_extensions.end(),
+      ExtensionRangeOrdering());
+
+    printer->Print(
+      "- (void) storeInDictionary:(NSMutableDictionary *)dictionary {\n");
+    printer->Indent();
+
+    // Merge the fields and the extension ranges, both sorted by field number.
+    for (int i = 0, j = 0;
+      i < descriptor_->field_count() || j < sorted_extensions.size(); ) {
+        if (i == descriptor_->field_count()) {
+          GenerateDictionaryOneExtensionRangeSource(printer, sorted_extensions[j++]);
+        } else if (j == sorted_extensions.size()) {
+          GenerateDictionaryOneFieldSource(printer, sorted_fields[i++]);
+        } else if (sorted_fields[i]->number() < sorted_extensions[j]->start) {
+          GenerateDictionaryOneFieldSource(printer, sorted_fields[i++]);
+        } else {
+          GenerateDictionaryOneExtensionRangeSource(printer, sorted_extensions[j++]);
+        }
+    }
+
+    printer->Print(
+      "[self.unknownFields storeInDictionary:dictionary];\n");
 
     printer->Outdent();
     printer->Print(
