@@ -249,6 +249,12 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
   void MessageGenerator::GenerateMessageHeader(io::Printer* printer) {
     scoped_array<const FieldDescriptor*> sorted_fields(SortFieldsByType(descriptor_));
 
+    for (int i = 0; i < descriptor_->field_count(); i++) {
+      string s = "#define ";
+      s = s + this->descriptor_->name() + "_" + descriptor_->field(i)->name() + " @\"" + descriptor_->field(i)->name() + "\"\n";
+      printer->Print(s.c_str());
+    }
+
     if (descriptor_->extension_range_count() > 0) {
       printer->Print(
         "@interface $classname$ : PBExtendableMessage {\n"
@@ -821,6 +827,10 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       field_generators_.get(field).GenerateDescriptionCodeSource(printer);
   }
 
+  void MessageGenerator::GenerateDictionaryOneFieldSource(
+    io::Printer* printer, const FieldDescriptor* field) {
+      field_generators_.get(field).GenerateDictionaryCodeSource(printer);
+  }
 
   void MessageGenerator::GenerateDescriptionOneExtensionRangeSource(
     io::Printer* printer, const Descriptor::ExtensionRange* range) {
@@ -833,6 +843,16 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         "to", SimpleItoa(range->end));
   }
 
+  void MessageGenerator::GenerateDictionaryOneExtensionRangeSource(
+    io::Printer* printer, const Descriptor::ExtensionRange* range) {
+      printer->Print(
+        "[self addExtensionDictionaryEntriesToMutableDictionary:(NSMutableDictionary*)output\n"
+        "                                          from:$from$\n"
+        "                                            to:$to$\n"
+        "                                    withIndent:indent];\n",
+        "from", SimpleItoa(range->start),
+        "to", SimpleItoa(range->end));
+  }
 
   void MessageGenerator::GenerateIsEqualOneFieldSource(
     io::Printer* printer, const FieldDescriptor* field) {

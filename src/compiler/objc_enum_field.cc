@@ -206,6 +206,12 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "}\n");
   }
 
+  void EnumFieldGenerator::GenerateDictionaryCodeSource(io::Printer* printer) const {
+    printer->Print(variables_,
+      "if (self.has$capitalized_name$) {\n"
+      "  [dictionary setObject: @(self.$name$) forKey: @\"$name$\"];\n"
+      "}\n");
+  }
 
   void EnumFieldGenerator::GenerateIsEqualCodeSource(io::Printer* printer) const {
     printer->Print(variables_,
@@ -475,6 +481,21 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     printer->Print("}\n");
   }
 
+  void RepeatedEnumFieldGenerator::GenerateDictionaryCodeSource(io::Printer* printer) const {
+    printer->Print(variables_,
+      "const NSUInteger $list_name$Count = self.$list_name$.count;\n"
+      "if ($list_name$Count > 0) {\n"
+      "  const $type$ *$list_name$Values = (const $type$ *)self.$list_name$.data;\n");
+    printer->Indent();
+    printer->Print(variables_,
+      "NSMutableArray * $list_name$Array = [NSMutableArray new];\n"
+      "for (NSUInteger i = 0; i < $list_name$Count; ++i) {\n"
+      "  [$list_name$Array addObject: @($list_name$Values[i])];\n"
+      "}\n"
+      "[dictionary setObject: $list_name$Array forKey: @\"$name$\"];\n");
+    printer->Outdent();
+    printer->Print("}\n");
+  }
 
   void RepeatedEnumFieldGenerator::GenerateIsEqualCodeSource(io::Printer* printer) const {
     printer->Print(variables_, "[self.$list_name$ isEqualToArray:otherMessage.$list_name$] &&");

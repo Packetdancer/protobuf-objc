@@ -488,7 +488,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "for ($type$* element in self.$list_name$) {\n"
       "  NSMutableDictionary *elementDictionary = [NSMutableDictionary dictionary];\n"
       "  [element storeInDictionary:elementDictionary];\n"
-      "  [dictionary setObject:[NSDictionary dictionaryWithDictionary:elementDictionary]];\n"
+      "  [dictionary setObject:[NSDictionary dictionaryWithDictionary:elementDictionary] forKey: @\"$name$\"];\n"
       "}\n");
   }
 

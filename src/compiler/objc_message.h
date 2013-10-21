@@ -71,9 +71,15 @@ class MessageGenerator {
       io::Printer* printer, const Descriptor::ExtensionRange* range);
 
   void GenerateMessageDescriptionSource(io::Printer* printer);
+  void GenerateMessageDictionarySource(io::Printer* printer);
   void GenerateDescriptionOneFieldSource(io::Printer* printer,
                                  const FieldDescriptor* field);
   void GenerateDescriptionOneExtensionRangeSource(
+      io::Printer* printer, const Descriptor::ExtensionRange* range);
+
+  void GenerateDictionaryOneFieldSource(io::Printer* printer,
+                                 const FieldDescriptor* field);
+  void GenerateDictionaryOneExtensionRangeSource(
       io::Printer* printer, const Descriptor::ExtensionRange* range);
 
   void GenerateMessageIsEqualSource(io::Printer* printer);

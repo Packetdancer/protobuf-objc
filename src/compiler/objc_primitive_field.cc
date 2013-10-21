@@ -397,6 +397,17 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "}\n");
   }
 
+  void PrimitiveFieldGenerator::GenerateDictionaryCodeSource(io::Printer* printer) const {
+    printer->Print(variables_,
+      "if (self.has$capitalized_name$) {\n"
+      "  [dictionary setObject: ");
+    printer->Print(variables_,
+      BoxValue(descriptor_, "self.$name$").c_str());//RAGY
+    printer->Print(variables_,
+      " forKey: @\"$name$\"];\n"
+      "}\n");
+  }
+
   void PrimitiveFieldGenerator::GenerateIsEqualCodeSource(io::Printer* printer) const {
     printer->Print(variables_,
       "self.has$capitalized_name$ == otherMessage.has$capitalized_name$ &&\n"
@@ -752,6 +763,23 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     }
   }
 
+  void RepeatedPrimitiveFieldGenerator::GenerateDictionaryCodeSource(io::Printer* printer) const {
+    if (ReturnsPrimitiveType(descriptor_)) {
+    printer->Print(variables_,
+      "NSMutableArray * $list_name$Array = [NSMutableArray new];\n"
+      "NSUInteger $list_name$Count=self.$list_name$.count;\n"
+          "for(int i=0;i<$list_name$Count;i++){\n"
+          "  [$list_name$Array addObject: @([self.$list_name$ $array_value_type_name$AtIndex:i]) forKey: @\"$name$\"];\n"
+          "}\n"
+          "[dictionary setObject: $list_name$Array forKey: @\"$name$\"];\n");
+    //RAGY need to adjust the string format from %@
+    } else {
+      printer->Print(variables_,
+        "for ($storage_type$ element in self.$list_name$) {\n"
+        "  [output appendFormat:@\"%@%@: %@\\n\", indent, @\"$name$\", element];\n"
+        "}\n");
+    }
+  }
 
   void RepeatedPrimitiveFieldGenerator::GenerateIsEqualCodeSource(io::Printer* printer) const {
     printer->Print(variables_,

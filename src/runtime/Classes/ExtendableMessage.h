@@ -76,6 +76,9 @@
                                              from:(int32_t) startInclusive
                                                to:(int32_t) endExclusive
                                        withIndent:(NSString*) indent;
+- (void) addExtensionDictionaryEntriesToMutableDictionary:(NSMutableDictionary*) output
+                                           from:(int32_t) startInclusive
+                                             to:(int32_t) endExclusive;
 - (BOOL) isEqualExtensionsInOther:(PBExtendableMessage*)otherMessage
                              from:(int32_t) startInclusive
                                to:(int32_t) endExclusive;

@@ -46,5 +46,6 @@
 
 - (void) writeDescriptionTo:(NSMutableString*) output
                  withIndent:(NSString*) indent;
+- (void) storeInDictionary: (NSMutableDictionary *) dic;
 
 @end

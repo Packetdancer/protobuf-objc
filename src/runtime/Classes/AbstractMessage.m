@@ -79,11 +79,13 @@
 }
 
 
-- (void) writeDescriptionTo:(NSMutableString*) output
-                 withIndent:(NSString*) indent {
+- (void) storeInDictionary: (NSMutableDictionary *) dic {
   @throw [NSException exceptionWithName:@"ImproperSubclassing" reason:@"" userInfo:nil];
 }
 
+- (NSDictionary *) dictionaryRepresentation {
+    @throw [NSException exceptionWithName:@"ImproperSubclassing" reason:@"" userInfo:nil];
+}
 
 - (NSString*) description {
   NSMutableString* output = [NSMutableString string];
