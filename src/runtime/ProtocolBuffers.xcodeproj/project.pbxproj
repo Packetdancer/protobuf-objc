@@ -165,6 +165,32 @@
 		C5CBB7FE126CBD5100354923 /* Descriptor.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CBB7FC126CBD5100354923 /* Descriptor.pb.m */; };
 		C5D8D6EB12767BC300F0BAE4 /* ArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D8D6EA12767BC300F0BAE4 /* ArrayTests.m */; };
 		C5D8D7351276810200F0BAE4 /* PBArray.h in Headers */ = {isa = PBXBuildFile; fileRef = C5F36E031275FA5A00013BB4 /* PBArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D478E7C317F0F24200524E1C /* ConcreteExtensionField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262512668BCF00204EE1 /* ConcreteExtensionField.h */; };
+		D478E7C417F0F24200524E1C /* ExtendableMessage_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262712668BCF00204EE1 /* ExtendableMessage_Builder.h */; };
+		D478E7C517F0F24200524E1C /* ExtendableMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262912668BCF00204EE1 /* ExtendableMessage.h */; };
+		D478E7C617F0F24200524E1C /* ExtensionField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262B12668BCF00204EE1 /* ExtensionField.h */; };
+		D478E7C717F0F24200524E1C /* PBExtensionRegistry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262C12668BCF00204EE1 /* PBExtensionRegistry.h */; };
+		D478E7C817F0F24200524E1C /* PBMutableExtensionRegistry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586263712668BFD00204EE1 /* PBMutableExtensionRegistry.h */; };
+		D478E7C917F0F24200524E1C /* Field.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586263B12668C0D00204EE1 /* Field.h */; };
+		D478E7CA17F0F24200524E1C /* MutableField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586263F12668C1800204EE1 /* MutableField.h */; };
+		D478E7CB17F0F24200524E1C /* UnknownFieldSet_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264312668C2000204EE1 /* UnknownFieldSet_Builder.h */; };
+		D478E7CC17F0F24200524E1C /* UnknownFieldSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264512668C2000204EE1 /* UnknownFieldSet.h */; };
+		D478E7CD17F0F24200524E1C /* CodedInputStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264B12668C2F00204EE1 /* CodedInputStream.h */; };
+		D478E7CE17F0F24200524E1C /* CodedOutputStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264D12668C2F00204EE1 /* CodedOutputStream.h */; };
+		D478E7CF17F0F24200524E1C /* TextFormat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265312668C3900204EE1 /* TextFormat.h */; };
+		D478E7D017F0F24200524E1C /* WireFormat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265712668C4100204EE1 /* WireFormat.h */; };
+		D478E7D117F0F24200524E1C /* AbstractMessage_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265B12668C4D00204EE1 /* AbstractMessage_Builder.h */; };
+		D478E7D217F0F24200524E1C /* AbstractMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265D12668C4D00204EE1 /* AbstractMessage.h */; };
+		D478E7D317F0F24200524E1C /* GeneratedMessage_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266312668C5800204EE1 /* GeneratedMessage_Builder.h */; };
+		D478E7D417F0F24200524E1C /* PBGeneratedMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266512668C5800204EE1 /* PBGeneratedMessage.h */; };
+		D478E7D517F0F24200524E1C /* Message_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266B12668C5F00204EE1 /* Message_Builder.h */; };
+		D478E7D617F0F24200524E1C /* Message.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266C12668C5F00204EE1 /* Message.h */; };
+		D478E7D717F0F24200524E1C /* PBArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5F36E031275FA5A00013BB4 /* PBArray.h */; };
+		D478E7D817F0F24200524E1C /* RingBuffer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266F12668C6C00204EE1 /* RingBuffer.h */; };
+		D478E7D917F0F24200524E1C /* Utilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586267312668C7400204EE1 /* Utilities.h */; };
+		D478E7DA17F0F24200524E1C /* Bootstrap.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586261F12668B9F00204EE1 /* Bootstrap.h */; };
+		D478E7DB17F0F24200524E1C /* ForwardDeclarations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262112668BB100204EE1 /* ForwardDeclarations.h */; };
+		D478E7DC17F0F24200524E1C /* ProtocolBuffers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262312668BBF00204EE1 /* ProtocolBuffers.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +209,44 @@
 			remoteInfo = ProtocolBuffers;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D478E7C217F0F1E200524E1C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/ProtocolBuffers;
+			dstSubfolderSpec = 16;
+			files = (
+				D478E7C317F0F24200524E1C /* ConcreteExtensionField.h in CopyFiles */,
+				D478E7C417F0F24200524E1C /* ExtendableMessage_Builder.h in CopyFiles */,
+				D478E7C517F0F24200524E1C /* ExtendableMessage.h in CopyFiles */,
+				D478E7C617F0F24200524E1C /* ExtensionField.h in CopyFiles */,
+				D478E7C717F0F24200524E1C /* PBExtensionRegistry.h in CopyFiles */,
+				D478E7C817F0F24200524E1C /* PBMutableExtensionRegistry.h in CopyFiles */,
+				D478E7C917F0F24200524E1C /* Field.h in CopyFiles */,
+				D478E7CA17F0F24200524E1C /* MutableField.h in CopyFiles */,
+				D478E7CB17F0F24200524E1C /* UnknownFieldSet_Builder.h in CopyFiles */,
+				D478E7CC17F0F24200524E1C /* UnknownFieldSet.h in CopyFiles */,
+				D478E7CD17F0F24200524E1C /* CodedInputStream.h in CopyFiles */,
+				D478E7CE17F0F24200524E1C /* CodedOutputStream.h in CopyFiles */,
+				D478E7CF17F0F24200524E1C /* TextFormat.h in CopyFiles */,
+				D478E7D017F0F24200524E1C /* WireFormat.h in CopyFiles */,
+				D478E7D117F0F24200524E1C /* AbstractMessage_Builder.h in CopyFiles */,
+				D478E7D217F0F24200524E1C /* AbstractMessage.h in CopyFiles */,
+				D478E7D317F0F24200524E1C /* GeneratedMessage_Builder.h in CopyFiles */,
+				D478E7D417F0F24200524E1C /* PBGeneratedMessage.h in CopyFiles */,
+				D478E7D517F0F24200524E1C /* Message_Builder.h in CopyFiles */,
+				D478E7D617F0F24200524E1C /* Message.h in CopyFiles */,
+				D478E7D717F0F24200524E1C /* PBArray.h in CopyFiles */,
+				D478E7D817F0F24200524E1C /* RingBuffer.h in CopyFiles */,
+				D478E7D917F0F24200524E1C /* Utilities.h in CopyFiles */,
+				D478E7DA17F0F24200524E1C /* Bootstrap.h in CopyFiles */,
+				D478E7DB17F0F24200524E1C /* ForwardDeclarations.h in CopyFiles */,
+				D478E7DC17F0F24200524E1C /* ProtocolBuffers.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		63A548C61704920B008E8FDD /* golden_message */ = {isa = PBXFileReference; lastKnownFileType = file; path = golden_message; sourceTree = "<group>"; };
@@ -682,6 +746,7 @@
 				726B87BA15E3C48E00D064DC /* Headers */,
 				726B877B15E3C3C300D064DC /* Sources */,
 				726B877C15E3C3C300D064DC /* Frameworks */,
+				D478E7C217F0F1E200524E1C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -734,7 +799,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ProtocolBuffers" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -951,7 +1016,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ProtocolBuffers.dst;
@@ -972,7 +1036,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DSTROOT = /tmp/ProtocolBuffers.dst;
 				GCC_MODEL_TUNING = G5;
@@ -989,7 +1052,6 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1007,7 +1069,6 @@
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1025,7 +1086,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1060,7 +1120,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1095,7 +1154,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1113,7 +1171,6 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1125,7 +1182,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1137,7 +1193,6 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1149,7 +1204,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -1179,7 +1233,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
