@@ -165,6 +165,32 @@
 		C5CBB7FE126CBD5100354923 /* Descriptor.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CBB7FC126CBD5100354923 /* Descriptor.pb.m */; };
 		C5D8D6EB12767BC300F0BAE4 /* ArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D8D6EA12767BC300F0BAE4 /* ArrayTests.m */; };
 		C5D8D7351276810200F0BAE4 /* PBArray.h in Headers */ = {isa = PBXBuildFile; fileRef = C5F36E031275FA5A00013BB4 /* PBArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4123C151818745200334FB5 /* ConcreteExtensionField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262512668BCF00204EE1 /* ConcreteExtensionField.h */; };
+		D4123C161818745500334FB5 /* ExtendableMessage_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262712668BCF00204EE1 /* ExtendableMessage_Builder.h */; };
+		D4123C171818745700334FB5 /* ExtendableMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262912668BCF00204EE1 /* ExtendableMessage.h */; };
+		D4123C181818745A00334FB5 /* ExtensionField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262B12668BCF00204EE1 /* ExtensionField.h */; };
+		D4123C191818745D00334FB5 /* PBExtensionRegistry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262C12668BCF00204EE1 /* PBExtensionRegistry.h */; };
+		D4123C1A1818746100334FB5 /* PBMutableExtensionRegistry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586263712668BFD00204EE1 /* PBMutableExtensionRegistry.h */; };
+		D4123C1B1818746700334FB5 /* Field.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586263B12668C0D00204EE1 /* Field.h */; };
+		D4123C1C1818746900334FB5 /* MutableField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586263F12668C1800204EE1 /* MutableField.h */; };
+		D4123C1D1818746C00334FB5 /* UnknownFieldSet_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264312668C2000204EE1 /* UnknownFieldSet_Builder.h */; };
+		D4123C1E1818747100334FB5 /* UnknownFieldSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264512668C2000204EE1 /* UnknownFieldSet.h */; };
+		D4123C1F1818747300334FB5 /* CodedInputStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264B12668C2F00204EE1 /* CodedInputStream.h */; };
+		D4123C201818747500334FB5 /* CodedOutputStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586264D12668C2F00204EE1 /* CodedOutputStream.h */; };
+		D4123C211818747700334FB5 /* TextFormat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265312668C3900204EE1 /* TextFormat.h */; };
+		D4123C221818747900334FB5 /* WireFormat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265712668C4100204EE1 /* WireFormat.h */; };
+		D4123C231818747D00334FB5 /* PBArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5F36E031275FA5A00013BB4 /* PBArray.h */; };
+		D4123C241818747F00334FB5 /* RingBuffer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266F12668C6C00204EE1 /* RingBuffer.h */; };
+		D4123C251818748000334FB5 /* Utilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586267312668C7400204EE1 /* Utilities.h */; };
+		D4123C261818748200334FB5 /* Bootstrap.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586261F12668B9F00204EE1 /* Bootstrap.h */; };
+		D4123C271818748400334FB5 /* ForwardDeclarations.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262112668BB100204EE1 /* ForwardDeclarations.h */; };
+		D4123C281818748500334FB5 /* ProtocolBuffers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262312668BBF00204EE1 /* ProtocolBuffers.h */; };
+		D4123C29181874A100334FB5 /* PBGeneratedMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266512668C5800204EE1 /* PBGeneratedMessage.h */; };
+		D4123C2A181874AB00334FB5 /* AbstractMessage_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265B12668C4D00204EE1 /* AbstractMessage_Builder.h */; };
+		D4123C2B181874AD00334FB5 /* AbstractMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586265D12668C4D00204EE1 /* AbstractMessage.h */; };
+		D4123C2C181874AE00334FB5 /* GeneratedMessage_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266312668C5800204EE1 /* GeneratedMessage_Builder.h */; };
+		D4123C2D181874B000334FB5 /* Message_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266B12668C5F00204EE1 /* Message_Builder.h */; };
+		D4123C2E181874B200334FB5 /* Message.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586266C12668C5F00204EE1 /* Message.h */; };
 		D478E7C317F0F24200524E1C /* ConcreteExtensionField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262512668BCF00204EE1 /* ConcreteExtensionField.h */; };
 		D478E7C417F0F24200524E1C /* ExtendableMessage_Builder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262712668BCF00204EE1 /* ExtendableMessage_Builder.h */; };
 		D478E7C517F0F24200524E1C /* ExtendableMessage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C586262912668BCF00204EE1 /* ExtendableMessage.h */; };
@@ -211,6 +237,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D4123C141818742B00334FB5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include/ProtocolBuffers;
+			dstSubfolderSpec = 16;
+			files = (
+				D4123C191818745D00334FB5 /* PBExtensionRegistry.h in CopyFiles */,
+				D4123C181818745A00334FB5 /* ExtensionField.h in CopyFiles */,
+				D4123C151818745200334FB5 /* ConcreteExtensionField.h in CopyFiles */,
+				D4123C231818747D00334FB5 /* PBArray.h in CopyFiles */,
+				D4123C161818745500334FB5 /* ExtendableMessage_Builder.h in CopyFiles */,
+				D4123C241818747F00334FB5 /* RingBuffer.h in CopyFiles */,
+				D4123C171818745700334FB5 /* ExtendableMessage.h in CopyFiles */,
+				D4123C251818748000334FB5 /* Utilities.h in CopyFiles */,
+				D4123C29181874A100334FB5 /* PBGeneratedMessage.h in CopyFiles */,
+				D4123C1A1818746100334FB5 /* PBMutableExtensionRegistry.h in CopyFiles */,
+				D4123C1C1818746900334FB5 /* MutableField.h in CopyFiles */,
+				D4123C211818747700334FB5 /* TextFormat.h in CopyFiles */,
+				D4123C1D1818746C00334FB5 /* UnknownFieldSet_Builder.h in CopyFiles */,
+				D4123C221818747900334FB5 /* WireFormat.h in CopyFiles */,
+				D4123C1B1818746700334FB5 /* Field.h in CopyFiles */,
+				D4123C271818748400334FB5 /* ForwardDeclarations.h in CopyFiles */,
+				D4123C281818748500334FB5 /* ProtocolBuffers.h in CopyFiles */,
+				D4123C2A181874AB00334FB5 /* AbstractMessage_Builder.h in CopyFiles */,
+				D4123C201818747500334FB5 /* CodedOutputStream.h in CopyFiles */,
+				D4123C2D181874B000334FB5 /* Message_Builder.h in CopyFiles */,
+				D4123C2C181874AE00334FB5 /* GeneratedMessage_Builder.h in CopyFiles */,
+				D4123C2E181874B200334FB5 /* Message.h in CopyFiles */,
+				D4123C2B181874AD00334FB5 /* AbstractMessage.h in CopyFiles */,
+				D4123C261818748200334FB5 /* Bootstrap.h in CopyFiles */,
+				D4123C1F1818747300334FB5 /* CodedInputStream.h in CopyFiles */,
+				D4123C1E1818747100334FB5 /* UnknownFieldSet.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D478E7C217F0F1E200524E1C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -783,6 +844,7 @@
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
+				D4123C141818742B00334FB5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1016,6 +1078,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ProtocolBuffers.dst;
@@ -1036,6 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DSTROOT = /tmp/ProtocolBuffers.dst;
 				GCC_MODEL_TUNING = G5;
