@@ -330,7 +330,6 @@ static PBArrayValueTypeInfo PBValueTypes[] =
 {
 	const NSUInteger requiredSlots = _count + additionalSlots;
 
-    bool wasAllocated=YES;
 	if (requiredSlots > _capacity)
 	{
 		// If we haven't allocated any capacity yet, simply reserve
@@ -338,7 +337,6 @@ static PBArrayValueTypeInfo PBValueTypes[] =
 		if (_capacity == 0)
 		{
 			_capacity = requiredSlots;
-            wasAllocated=NO;
 		}
 		else
 		{
