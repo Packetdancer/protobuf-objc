@@ -10,6 +10,11 @@ Protocol Buffers are a way of encoding structured data in an efficient yet exten
 This project is based on an implementation of Protocol Buffers from Google.  See the
 [Google protobuf project][g-protobuf] for more information.
 
+Changes to this copy of the repository mostly involve the addition of a new -storeIntoDictionary: method on
+a message, which takes an NSMutableDictionary and writes out all the fields within the message.  This is
+useful to pass the content of a message outside of a framework without having the host app require
+ProtocolBuffers headers.
+
 [g-protobuf]: http://code.google.com/p/protobuf/
 [protobuf-objc]: https://github.com/booyah/protobuf-objc
 
