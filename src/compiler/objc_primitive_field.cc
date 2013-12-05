@@ -769,7 +769,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
       "NSMutableArray * $list_name$Array = [NSMutableArray new];\n"
       "NSUInteger $list_name$Count=self.$list_name$.count;\n"
           "for(int i=0;i<$list_name$Count;i++){\n"
-          "  [$list_name$Array addObject: @([self.$list_name$ $array_value_type_name$AtIndex:i]) forKey: @\"$name$\"];\n"
+          "  [$list_name$Array addObject: @([self.$list_name$ $array_value_type_name$AtIndex:i])];\n"
           "}\n"
           "[dictionary setObject: $list_name$Array forKey: @\"$name$\"];\n");
     //RAGY need to adjust the string format from %@
