@@ -1146,6 +1146,135 @@
 			};
 			name = Release;
 		};
+		509B4A8718BFDFCA00B7078A /* CodeCoverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../ProtocolBuffers;
+				OBJROOT = Build;
+				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = ../ProtocolBuffers/private;
+				PUBLIC_HEADERS_FOLDER_PATH = ../ProtocolBuffers;
+				SDKROOT = iphoneos;
+				SYMROOT = Build/Products;
+			};
+			name = CodeCoverage;
+		};
+		509B4A8818BFDFCA00B7078A /* CodeCoverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ProtocolBuffers.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ProtocolBuffers_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = ProtocolBuffers;
+				SDKROOT = "";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = CodeCoverage;
+		};
+		509B4A8918BFDFCA00B7078A /* CodeCoverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Foundation.framework/Headers/Foundation.h";
+				INFOPLIST_FILE = "UnitTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-all_load",
+				);
+				PRODUCT_NAME = UnitTests;
+				SDKROOT = "";
+				VALID_ARCHS = "i386 x86_64";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = CodeCoverage;
+		};
+		509B4A8A18BFDFCA00B7078A /* CodeCoverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ProtocolBuffersTouch.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProtocolBuffersTouch/ProtocolBuffersTouch-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+			};
+			name = CodeCoverage;
+		};
+		509B4A8B18BFDFCA00B7078A /* CodeCoverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Foundation.framework/Headers/Foundation.h";
+				INFOPLIST_FILE = "UnitTests copy-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-all_load",
+				);
+				PRODUCT_NAME = "UnitTests copy";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = CodeCoverage;
+		};
 		63BD8C0215FFAC3A0010D8DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1329,6 +1458,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
+				509B4A8818BFDFCA00B7078A /* CodeCoverage */,
 				1DEB922008733DC00010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1338,6 +1468,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
+				509B4A8718BFDFCA00B7078A /* CodeCoverage */,
 				1DEB922408733DC00010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1347,6 +1478,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63BD8C0215FFAC3A0010D8DA /* Debug */,
+				509B4A8B18BFDFCA00B7078A /* CodeCoverage */,
 				63BD8C0315FFAC3A0010D8DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1356,6 +1488,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				726B879E15E3C3C300D064DC /* Debug */,
+				509B4A8A18BFDFCA00B7078A /* CodeCoverage */,
 				726B879F15E3C3C300D064DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1365,6 +1498,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C5B03F78125179F50087887C /* Debug */,
+				509B4A8918BFDFCA00B7078A /* CodeCoverage */,
 				C5B03F79125179F50087887C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
