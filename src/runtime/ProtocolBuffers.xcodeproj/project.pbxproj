@@ -861,7 +861,8 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ProtocolBuffers" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1122,6 +1123,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../ProtocolBuffers;
 				OBJROOT = Build;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = ../ProtocolBuffers/private;
 				PUBLIC_HEADERS_FOLDER_PATH = ../ProtocolBuffers;
