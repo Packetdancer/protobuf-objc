@@ -775,9 +775,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     //RAGY need to adjust the string format from %@
     } else {
       printer->Print(variables_,
-        "for ($storage_type$ element in self.$list_name$) {\n"
-        "  [output appendFormat:@\"%@%@: %@\\n\", indent, @\"$name$\", element];\n"
-        "}\n");
+      	"[dictionary setObject:self.$name$ forKey: @\"$name$\"];\n");
     }
   }
 
