@@ -75,12 +75,11 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         case FieldDescriptor::TYPE_FLOAT   : return "float" ;
         case FieldDescriptor::TYPE_DOUBLE  : return "double";
         case FieldDescriptor::TYPE_BOOL    : return "bool"  ;
-  /*      case FieldDescriptor::TYPE_STRING  : return "object";
+        case FieldDescriptor::TYPE_STRING  : return "object";
         case FieldDescriptor::TYPE_BYTES   : return "object";
         case FieldDescriptor::TYPE_ENUM    : return "object";
         case FieldDescriptor::TYPE_GROUP   : return "object";
-        case FieldDescriptor::TYPE_MESSAGE : return "object";
-*/    
+        case FieldDescriptor::TYPE_MESSAGE : return "object";    
   }
 
       GOOGLE_LOG(FATAL) << "Can't get here.";
@@ -102,13 +101,11 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         case FieldDescriptor::TYPE_FLOAT   : return "Float" ;
         case FieldDescriptor::TYPE_DOUBLE  : return "Double";
         case FieldDescriptor::TYPE_BOOL    : return "Bool"  ;
-/*
         case FieldDescriptor::TYPE_STRING  : return "Object";
         case FieldDescriptor::TYPE_BYTES   : return "Object";
         case FieldDescriptor::TYPE_ENUM    : return "Object";
         case FieldDescriptor::TYPE_GROUP   : return "Object";
         case FieldDescriptor::TYPE_MESSAGE : return "Object";
-*/  
     }
 
       GOOGLE_LOG(FATAL) << "Can't get here.";
@@ -724,7 +721,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
           "}\n");
       } else {
         printer->Print(variables_,
-          "dataSize = $fixed_size$ * count;\n");
+          "dataSize = (int32_t)($fixed_size$ * count);\n");
       }
     }
 
@@ -752,7 +749,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 		printer->Print(variables_,
 			"NSUInteger $list_name$Count=self.$list_name$.count;\n"
 	        "for(int i=0;i<$list_name$Count;i++){\n"
-				"  [output appendFormat:@\"%@%@: %d\\n\", indent, @\"$name$\", [self.$list_name$ $array_value_type_name$AtIndex:i]];\n"
+				"  [output appendFormat:@\"%@%@: %@\\n\", indent, @\"$name$\", [NSNumber numberWithUnsignedLongLong:[self.$list_name$ $array_value_type_name$AtIndex:i]]];\n"
 	        "}\n");
 		//RAGY need to adjust the string format from %@
     } else {
