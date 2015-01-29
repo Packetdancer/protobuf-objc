@@ -252,6 +252,12 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     void MessageGenerator::GenerateMessageHeader(io::Printer* printer) {
         scoped_array<const FieldDescriptor*> sorted_fields(SortFieldsByType(descriptor_));
         
+        for (int i = 0; i < descriptor_->field_count(); i++) {
+            string s = "#define ";
+            s = s + this->descriptor_->name() + "_" + descriptor_->field(i)->name() + " @\"" + UnderscoresToCamelCase(descriptor_->field(i)) + "\"\n";
+            printer->Print(s.c_str());
+        }
+
         if (descriptor_->extension_range_count() > 0) {
             printer->Print(
                            "@interface $classname$ : PBExtendableMessage<GeneratedMessageProtocol> {\n"
@@ -399,6 +405,8 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                        "classname", ClassName(descriptor_));
         
         GenerateMessageDescriptionSource(printer);
+
+        GenerateMessageDictionarySource(printer);
         
         GenerateMessageIsEqualSource(printer);
         
@@ -647,6 +655,41 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                        "}\n");
     }
     
+    void MessageGenerator::GenerateMessageDictionarySource(io::Printer* printer) {
+        scoped_array<const FieldDescriptor*> sorted_fields(SortFieldsByNumber(descriptor_));
+
+        vector<const Descriptor::ExtensionRange*> sorted_extensions;
+        for (int i = 0; i < descriptor_->extension_range_count(); ++i) {
+            sorted_extensions.push_back(descriptor_->extension_range(i));
+        }
+        sort(sorted_extensions.begin(), sorted_extensions.end(),
+          ExtensionRangeOrdering());
+
+        printer->Print(
+          "- (void) storeInDictionary:(NSMutableDictionary *)dictionary {\n");
+        printer->Indent();
+
+        // Merge the fields and the extension ranges, both sorted by field number.
+        for (int i = 0, j = 0; i < descriptor_->field_count() || j < sorted_extensions.size(); ) {
+            if (i == descriptor_->field_count()) {
+                GenerateDictionaryOneExtensionRangeSource(printer, sorted_extensions[j++]);
+            } else if (j == sorted_extensions.size()) {
+                GenerateDictionaryOneFieldSource(printer, sorted_fields[i++]);
+            } else if (sorted_fields[i]->number() < sorted_extensions[j]->start) {
+                GenerateDictionaryOneFieldSource(printer, sorted_fields[i++]);
+            } else {
+                GenerateDictionaryOneExtensionRangeSource(printer, sorted_extensions[j++]);
+            }
+        }
+
+        printer->Print(
+          "[self.unknownFields storeInDictionary:dictionary];\n");
+
+        printer->Outdent();
+        printer->Print(
+          "}\n");
+    }
+
     
     void MessageGenerator::GenerateMessageIsEqualSource(io::Printer* printer) {
         scoped_array<const FieldDescriptor*> sorted_fields(SortFieldsByNumber(descriptor_));
@@ -772,7 +815,11 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         field_generators_.get(field).GenerateSerializationCodeSource(printer);
     }
     
-    
+    void MessageGenerator::GenerateDictionaryOneFieldSource(
+                                                            io::Printer* printer, const FieldDescriptor* field) {
+        field_generators_.get(field).GenerateDictionaryCodeSource(printer);
+    }
+
     void MessageGenerator::GenerateSerializeOneExtensionRangeSource(
                                                                     io::Printer* printer, const Descriptor::ExtensionRange* range) {
         printer->Print(
@@ -799,6 +846,18 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                        "from", SimpleItoa(range->start),
                        "to", SimpleItoa(range->end));
     }
+
+    void MessageGenerator::GenerateDictionaryOneExtensionRangeSource(
+                                                                     io::Printer* printer, const Descriptor::ExtensionRange* range) {
+        printer->Print(
+                        "[self addExtensionDictionaryEntriesToMutableDictionary:(NSMutableDictionary*)output\n"
+                        "                                          from:$from$\n"
+                        "                                            to:$to$\n"
+                        "                                    withIndent:indent];\n",
+                        "from", SimpleItoa(range->start),
+                        "to", SimpleItoa(range->end));
+  }
+
     
     
     void MessageGenerator::GenerateIsEqualOneFieldSource(

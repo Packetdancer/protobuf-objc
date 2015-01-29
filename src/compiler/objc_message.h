@@ -76,6 +76,12 @@ namespace google {
                     void GenerateDescriptionOneExtensionRangeSource(
                                                                     io::Printer* printer, const Descriptor::ExtensionRange* range);
                     
+                    void GenerateMessageDictionarySource(io::Printer *printer);
+                    void GenerateDictionaryOneFieldSource(io::Printer *printer,
+                                                          const FieldDescriptor* field);
+                    void GenerateDictionaryOneExtensionRangeSource(io::Printer *printer,
+                                                                    const Descriptor::ExtensionRange *range);
+
                     void GenerateMessageIsEqualSource(io::Printer* printer);
                     void GenerateIsEqualOneFieldSource(io::Printer* printer,
                                                        const FieldDescriptor* field);

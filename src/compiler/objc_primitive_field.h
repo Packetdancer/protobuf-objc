@@ -56,6 +56,7 @@ namespace google {
                     void GenerateSerializationCodeSource(io::Printer* printer) const;
                     void GenerateSerializedSizeCodeSource(io::Printer* printer) const;
                     void GenerateDescriptionCodeSource(io::Printer* printer) const;
+                    void GenerateDictionaryCodeSource(io::Printer* printer) const;
                     void GenerateIsEqualCodeSource(io::Printer* printer) const;
                     void GenerateHashCodeSource(io::Printer* printer) const;
                     
@@ -94,6 +95,7 @@ namespace google {
                     void GenerateSerializationCodeSource(io::Printer* printer) const;
                     void GenerateSerializedSizeCodeSource(io::Printer* printer) const;
                     void GenerateDescriptionCodeSource(io::Printer* printer) const;
+                    void GenerateDictionaryCodeSource(io::Printer* printer) const;
                     void GenerateIsEqualCodeSource(io::Printer* printer) const;
                     void GenerateHashCodeSource(io::Printer* printer) const;
                     
