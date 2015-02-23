@@ -243,7 +243,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     		"if (self.has$capitalized_name$) {\n"
     		" NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary]; \n"
     		" [self.$name$ storeInDictionary:messageDictionary];\n"
-    		" [dictionary setObject:[NSDictionary dictionaryWithDictionary:messageDictionary] forKey:@\"$name\"];\n"
+    		" [dictionary setObject:[NSDictionary dictionaryWithDictionary:messageDictionary] forKey:@\"$name$\"];\n"
     		"}\n");
     }
     
