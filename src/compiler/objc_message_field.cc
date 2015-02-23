@@ -103,8 +103,8 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                        "- (BOOL) has$capitalized_name$ {\n"
                        "  return !!has$capitalized_name$_;\n"
                        "}\n"
-                       "- (void) setHas$capitalized_name$:(BOOL) value_ {\n"
-                       "  has$capitalized_name$_ = !!value_;\n"
+                       "- (void) setHas$capitalized_name$:(BOOL) _value_ {\n"
+                       "  has$capitalized_name$_ = !!_value_;\n"
                        "}\n"
                        "@synthesize $name$;\n");
     }

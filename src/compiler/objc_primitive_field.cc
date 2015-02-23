@@ -275,8 +275,8 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                        "- (BOOL) has$capitalized_name$ {\n"
                        "  return !!has$capitalized_name$_;\n"
                        "}\n"
-                       "- (void) setHas$capitalized_name$:(BOOL) value_ {\n"
-                       "  has$capitalized_name$_ = !!value_;\n"
+                       "- (void) setHas$capitalized_name$:(BOOL) _value_ {\n"
+                       "  has$capitalized_name$_ = !!_value_;\n"
                        "}\n");
         
         if (GetObjectiveCType(descriptor_) == OBJECTIVECTYPE_BOOLEAN) {
@@ -284,8 +284,8 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                            "- (BOOL) $name$ {\n"
                            "  return !!$name$_;\n"
                            "}\n"
-                           "- (void) set$capitalized_name$:(BOOL) value_ {\n"
-                           "  $name$_ = !!value_;\n"
+                           "- (void) set$capitalized_name$:(BOOL) _value_ {\n"
+                           "  $name$_ = !!_value_;\n"
                            "}\n");
         } else {
             printer->Print(variables_, "@synthesize $name$;\n");
@@ -802,7 +802,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
             
         } else {
             printer->Print(variables_,
-                           "[self.$list_name$ enumerateObjectsUsingBlock:^(id element, NSUInteger idx, BOOL *stop) {\n"
+                           "[self.$list_name$ enumerateObjectsUsingBlock:^($type$ *element, NSUInteger idx, BOOL *stop) {\n"
                            "  hashCode = hashCode * 31 + [element hash];\n"
                            "}];\n");
         }

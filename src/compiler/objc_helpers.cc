@@ -138,12 +138,12 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     
     
     string UnderscoresToCamelCase(const FieldDescriptor* field) {
-        return UnderscoresToCamelCase(FieldName(field));
+        return SafeNSObjectName(UnderscoresToCamelCase(FieldName(field)));
     }
     
     
     string UnderscoresToCapitalizedCamelCase(const FieldDescriptor* field) {
-        return UnderscoresToCapitalizedCamelCase(FieldName(field));
+        return SafeNSObjectName(UnderscoresToCapitalizedCamelCase(FieldName(field)));
     }
     
     string UnderscoresToCapitalizedCamelCase(const Descriptor* desc) {
@@ -451,6 +451,51 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
             result.append("_");
         }
         return result;
+    }
+    
+    template <typename T, typename U>
+    class create_map {
+    private:
+        std::map<T, U> m_map;
+    public:
+        create_map(const T& key, const U& val) {
+            m_map[key] = val;
+        }
+        
+        create_map<T, U>& operator()(const T& key, const U& val) {
+            m_map[key] = val;
+            return *this;
+        }
+        
+        operator std::map<T, U>() {
+            return m_map;
+        }
+    };
+    
+    string SafeNSObjectName(const string& name) {
+        typedef std::map<string, string> NSObjectMap;
+        
+        static NSObjectMap keywords = create_map<string, string>
+            ("load",                "pb_load")
+            ("initialize",          "pb_initialize")
+            ("init",                "pb_init")
+            ("new",                 "pb_new")
+            ("alloc",               "pb_alloc")
+            ("dealloc",             "pb_dealloc")
+            ("finalize",            "pb_finalize")
+            ("copy",                "pb_copy")
+            ("hash",                "pb_hash")
+            ("superclass",          "pb_superclass")
+            ("class",               "pb_class")
+            ("description",         "pb_description")
+            ("debugDescription",    "pb_debugDescription");
+        
+        NSObjectMap::const_iterator it = keywords.find(name);
+        
+        if (it != keywords.end())
+            return it->second;
+        else
+            return name;
     }
     
     string BoxValue(const FieldDescriptor* field, const string& value) {

@@ -77,6 +77,7 @@ namespace google {
                 string EnumValueName(const EnumValueDescriptor* descriptor);
                 
                 string SafeName(const string& name);
+                string SafeNSObjectName(const string& name);
                 
                 enum ObjectiveCType {
                     OBJECTIVECTYPE_INT,
