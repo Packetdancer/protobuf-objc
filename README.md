@@ -41,7 +41,7 @@ How To Install Protobuf
 
 7. `cd <your .xcodeproj directory>`
 
-8. `echo -e "platform :ios , 6.0 \nlink_with '<YourAppTarget>', '<YourAppTarget_Test>' \npod 'ProtocolBuffers', '1.9.6' " > Podfile`
+8. `echo -e "platform :ios , 6.0 \nlink_with '<YourAppTarget>', '<YourAppTarget_Test>' \npod 'ProtocolBuffers', '1.9.7' " > Podfile`
 
 9. `pod install`
 
