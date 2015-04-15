@@ -782,7 +782,9 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                            "[dictionary setObject: $list_name$Array forKey: @\"$name$\"];\n");
         } else {
             printer->Print(variables_,
-                           "[dictionary setObject:self.$name$ forKey: @\"$name$\"];\n");
+                           "if (self.$name$) {\n"
+                           "  [dictionary setObject:self.$name$ forKey: @\"$name$\"];\n"
+                           "}\n");
         }
     }
 
