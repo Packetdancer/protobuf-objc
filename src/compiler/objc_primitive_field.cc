@@ -399,7 +399,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
 
     void PrimitiveFieldGenerator::GenerateDictionaryCodeSource(io::Printer* printer) const {
         printer->Print(variables_,
-                       "if (self.has$capitalized_name$) {\n"
+                       "if (self.has$capitalized_name$ && self.$name$) {\n"
                        "  [dictionary setObject: ");
         printer->Print(variables_,
                        BoxValue(descriptor_, "self.$name$").c_str());//RAGY

@@ -261,13 +261,26 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
             return "";
         }
     }
+
+    string FileClassSuffix(const FileDescriptor* file) {
+        if (IsBootstrapFile(file)) {
+            return "";
+        } else if (file->options().HasExtension(objectivec_file_options)) {
+            ObjectiveCFileOptions options = file->options().GetExtension(objectivec_file_options);
+
+            return options.class_suffix();
+        } else {
+            return "";
+        }
+    }
     
     
     string FileClassName(const FileDescriptor* file) {
         // Ensure the FileClassName is camelcased irrespective of whether the
         // camelcase_output_filename option is set.
         return FileClassPrefix(file) +
-        UnderscoresToCapitalizedCamelCase(FileName(file)) + "Root";
+        UnderscoresToCapitalizedCamelCase(FileName(file)) + "Root" + 
+        FileClassSuffix(file);
     }
     
     
@@ -275,6 +288,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         string result;
         result += FileClassPrefix(file);
         result += full_name;
+        result += FileClassSuffix(file);
         return result;
     }
     
@@ -303,6 +317,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         string name;
         name += FileClassPrefix(descriptor->file());
         name += ClassNameWorker(descriptor);
+        name += FileClassSuffix(descriptor->file());
         return name;
     }
     
@@ -311,6 +326,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         string name;
         name += FileClassPrefix(descriptor->file());
         name += ClassNameWorker(descriptor);
+        name += FileClassSuffix(descriptor->file());
         return name;
     }
     
@@ -319,6 +335,7 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
         string name;
         name += FileClassPrefix(descriptor->file());
         name += descriptor->name();
+        name += FileClassSuffix(descriptor->file());
         return name;
     }
     

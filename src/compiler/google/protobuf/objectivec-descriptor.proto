@@ -33,6 +33,10 @@ message ObjectiveCFileOptions {
   // This will commonly be the capitalized letters from the above defined
   // 'objectivec_directory'
   optional string class_prefix = 2;
+
+  // The string to be suffixed after all classes in order to allow for 
+  // versioning.  Not commonly used by most people.
+  optional string class_suffix = 3;
 }
 
 extend google.protobuf.FileOptions {

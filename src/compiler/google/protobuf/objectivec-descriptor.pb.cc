@@ -35,9 +35,10 @@ void protobuf_AssignDesc_google_2fprotobuf_2fobjectivec_2ddescriptor_2eproto() {
       "google/protobuf/objectivec-descriptor.proto");
   GOOGLE_CHECK(file != NULL);
   ObjectiveCFileOptions_descriptor_ = file->message_type(0);
-  static const int ObjectiveCFileOptions_offsets_[2] = {
+  static const int ObjectiveCFileOptions_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ObjectiveCFileOptions, package_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ObjectiveCFileOptions, class_prefix_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ObjectiveCFileOptions, class_suffix_),
   };
   ObjectiveCFileOptions_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -83,11 +84,12 @@ void protobuf_AddDesc_google_2fprotobuf_2fobjectivec_2ddescriptor_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n+google/protobuf/objectivec-descriptor."
     "proto\022\017google.protobuf\032 google/protobuf/"
-    "descriptor.proto\">\n\025ObjectiveCFileOption"
+    "descriptor.proto\"T\n\025ObjectiveCFileOption"
     "s\022\017\n\007package\030\001 \001(\t\022\024\n\014class_prefix\030\002 \001(\t"
-    ":f\n\027objectivec_file_options\022\034.google.pro"
-    "tobuf.FileOptions\030\352\007 \001(\0132&.google.protob"
-    "uf.ObjectiveCFileOptions", 264);
+    "\022\024\n\014class_suffix\030\003 \001(\t:f\n\027objectivec_fil"
+    "e_options\022\034.google.protobuf.FileOptions\030"
+    "\352\007 \001(\0132&.google.protobuf.ObjectiveCFileO"
+    "ptions", 286);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "google/protobuf/objectivec-descriptor.proto", &protobuf_RegisterTypes);
   ObjectiveCFileOptions::default_instance_ = new ObjectiveCFileOptions();
@@ -111,6 +113,7 @@ struct StaticDescriptorInitializer_google_2fprotobuf_2fobjectivec_2ddescriptor_2
 #ifndef _MSC_VER
 const int ObjectiveCFileOptions::kPackageFieldNumber;
 const int ObjectiveCFileOptions::kClassPrefixFieldNumber;
+const int ObjectiveCFileOptions::kClassSuffixFieldNumber;
 #endif  // !_MSC_VER
 
 ObjectiveCFileOptions::ObjectiveCFileOptions()
@@ -134,6 +137,7 @@ void ObjectiveCFileOptions::SharedCtor() {
   _cached_size_ = 0;
   package_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   class_prefix_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  class_suffix_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -148,6 +152,9 @@ void ObjectiveCFileOptions::SharedDtor() {
   }
   if (class_prefix_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete class_prefix_;
+  }
+  if (class_suffix_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete class_suffix_;
   }
   if (this != default_instance_) {
   }
@@ -175,7 +182,7 @@ ObjectiveCFileOptions* ObjectiveCFileOptions::New() const {
 }
 
 void ObjectiveCFileOptions::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_package()) {
       if (package_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         package_->clear();
@@ -184,6 +191,11 @@ void ObjectiveCFileOptions::Clear() {
     if (has_class_prefix()) {
       if (class_prefix_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         class_prefix_->clear();
+      }
+    }
+    if (has_class_suffix()) {
+      if (class_suffix_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        class_suffix_->clear();
       }
     }
   }
@@ -227,6 +239,23 @@ bool ObjectiveCFileOptions::MergePartialFromCodedStream(
             this->class_prefix().data(), this->class_prefix().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
             "class_prefix");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_class_suffix;
+        break;
+      }
+
+      // optional string class_suffix = 3;
+      case 3: {
+        if (tag == 26) {
+         parse_class_suffix:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_class_suffix()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->class_suffix().data(), this->class_suffix().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "class_suffix");
         } else {
           goto handle_unusual;
         }
@@ -279,6 +308,16 @@ void ObjectiveCFileOptions::SerializeWithCachedSizes(
       2, this->class_prefix(), output);
   }
 
+  // optional string class_suffix = 3;
+  if (has_class_suffix()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->class_suffix().data(), this->class_suffix().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "class_suffix");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->class_suffix(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -311,6 +350,17 @@ void ObjectiveCFileOptions::SerializeWithCachedSizes(
         2, this->class_prefix(), target);
   }
 
+  // optional string class_suffix = 3;
+  if (has_class_suffix()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->class_suffix().data(), this->class_suffix().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "class_suffix");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->class_suffix(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -335,6 +385,13 @@ int ObjectiveCFileOptions::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->class_prefix());
+    }
+
+    // optional string class_suffix = 3;
+    if (has_class_suffix()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->class_suffix());
     }
 
   }
@@ -370,6 +427,9 @@ void ObjectiveCFileOptions::MergeFrom(const ObjectiveCFileOptions& from) {
     if (from.has_class_prefix()) {
       set_class_prefix(from.class_prefix());
     }
+    if (from.has_class_suffix()) {
+      set_class_suffix(from.class_suffix());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -395,6 +455,7 @@ void ObjectiveCFileOptions::Swap(ObjectiveCFileOptions* other) {
   if (other != this) {
     std::swap(package_, other->package_);
     std::swap(class_prefix_, other->class_prefix_);
+    std::swap(class_suffix_, other->class_suffix_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
