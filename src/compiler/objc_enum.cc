@@ -65,6 +65,12 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
                            "name", EnumValueName(canonical_values_[i]),
                            "value", SimpleItoa(canonical_values_[i]->number()));
         }
+        for (int i = 0; i < aliases_.size(); i++) {
+            printer->Print(
+                           "$name$ = $value$, //Aliased\n",
+                           "name", EnumValueName(aliases_[i].value),
+                           "value", SimpleItoa(aliases_[i].value->number()));
+        }
         
         printer->Outdent();
         printer->Print(
