@@ -850,10 +850,9 @@ namespace google { namespace protobuf { namespace compiler { namespace objective
     void MessageGenerator::GenerateDictionaryOneExtensionRangeSource(
                                                                      io::Printer* printer, const Descriptor::ExtensionRange* range) {
         printer->Print(
-                        "[self addExtensionDictionaryEntriesToMutableDictionary:(NSMutableDictionary*)output\n"
+                        "[self addExtensionDictionaryEntriesToMutableDictionary:dictionary\n"
                         "                                          from:$from$\n"
-                        "                                            to:$to$\n"
-                        "                                    withIndent:indent];\n",
+                        "                                            to:$to$];\n",
                         "from", SimpleItoa(range->start),
                         "to", SimpleItoa(range->end));
   }
